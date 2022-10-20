@@ -7,39 +7,33 @@
 </head>
 <body>
     <script>
-        //手机
-        function Phone(brand, price){
-            this.brand = brand;
-            this.price = price;
+        // es5 类，类属性、方法的生命
+        function Car() {
+            this.band = 'BMW';
+            this.model = '320li';
+        }
+        Car.prototype.travel = function () {
+            console.log(`${this.band}-${this.model} 行驶在青年大道上...`)
         }
 
-        //添加方法
-        Phone.prototype.call = function(){
-            console.log("我可以打电话!!");
-        }
-
-        //实例化对象
-        let Huawei = new Phone('华为', 5999);
-        Huawei.call();
-        console.log(Huawei);
-
+        let car = new Car();
+        car.travel();
+        console.log(car)
         //class
-        class Shouji{
-            //构造方法 名字不能修改
-            constructor(brand, price){
+        class Phone {
+            constructor (brand, model) {
                 this.brand = brand;
-                this.price = price;
+                this.model = model;
             }
 
-            //方法必须使用该语法, 不能使用 ES5 的对象完整形式
-            call(){
-                console.log("我可以打电话!!");
+            play (action) {
+                console.log(`肖老板在使用${this.brand}-${this.model} ${action}...`)
             }
         }
 
-        let onePlus = new Shouji("1+", 1999);
-
-        console.log(onePlus);
+        let phone = new Phone("iphone", '13');
+        console.log(phone);
+        phone.play('看贴吧');
     </script>
 </body>
 </html>
