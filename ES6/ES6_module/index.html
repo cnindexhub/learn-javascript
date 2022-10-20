@@ -7,24 +7,40 @@
 </head>
 <body>
     <script type="module">
-        //1. 通用的导入方式
-        //引入 m1.js 模块内容
-        // import * as m1 from "./src/js/m1.js";
-        // //引入 m2.js 模块内容
-        // import * as m2 from "./src/js/m2.js";
-        // //引入 m3.js 
-        // import * as m3 from "./src/js/m3.js";
 
-        //2. 解构赋值形式
-        // import {school, teach} from "./src/js/m1.js";
-        // import {school as guigu, findJob} from "./src/js/m2.js";
-        // import {default as m3} from "./src/js/m3.js";
+        // 通过 * as 的方式导入模块
+        // 分别暴露引入module1.js
+        // import * as module1 from './src/js/module1.js';
+        // module1.work();
+        // console.log(module1)
 
-        //3. 简便形式  针对默认暴露
-        // import m3 from "./src/js/m3.js";
-        // console.log(m3);
+        // 默认暴露module2.js
+        // import * as module2 from './src/js/module2.js';
+        // console.log(module2)
+
+        // 统一暴露module3.js
+        // import * as module3 from './src/js/module3.js';
+        // console.log(module3);
+
+
+        // 解构赋值的形式导入模块
+        // 分别暴露
+        // import {company, work} from "./src/js/module1.js";
+        // // 默认暴露
+        // import {default as module2} from "./src/js/module2.js";
+        // // 统一暴露
+        // import {company as company2, work as work2} from './src/js/module3.js';
+        // console.log(company)
+        // work();
+        // console.log(company2)
+        // work2();
+        // console.log(module2.company)
+        // module2.work();
+
+        // 简便形式只能使用默认暴露的
+        // import module2 from './src/js/module2.js';
+        // console.log(module2.company);
+        // module2.work();
     </script>
-
-    <script src="./src/js/app.js" type="module"></script>
 </body>
 </html>
