@@ -1,3 +1,5 @@
-export function hello(){
-    alert('Hello');
+function hello() {
+    alert("Hello");
 }
+
+export {hello};

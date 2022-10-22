@@ -1,9 +1,11 @@
-// import * as m1 from "./hello.js";
-//获取元素
-const btn = document.getElementById('btn');
+// 固定导入 hello.js
+// import * as helloJs from './hello.js';
 
-btn.onclick = function(){
+let btn = document.getElementById("btn");
+
+btn.addEventListener('click', function () {
+    // 动态导入module
     import('./hello.js').then(module => {
         module.hello();
-    });
-}
+    })
+})

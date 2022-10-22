@@ -7,34 +7,31 @@
 </head>
 <body>
     <script>
-        class Person{
-            //公有属性
+        class Person {
+            // 公有属性
             name;
-            //私有属性
+            // 私有属性
             #age;
             #weight;
-            //构造方法
-            constructor(name, age, weight){
+
+            constructor(name, age, weight) {
                 this.name = name;
                 this.#age = age;
                 this.#weight = weight;
             }
 
-            intro(){
+            intro () {
                 console.log(this.name);
                 console.log(this.#age);
                 console.log(this.#weight);
             }
         }
 
-        //实例化
-        const girl = new Person('晓红', 18, '45kg');
-
-        // console.log(girl.name);
-        // console.log(girl.#age);
-        // console.log(girl.#weight);
-
-        girl.intro();
+        // 实力化
+        let person = new Person("小美", 18, 88);
+        console.log(person);
+        console.log(person.name);
+        // console.log(person.#age) // 对象的私有属性不能在外部直接调用
     </script>
 </body>
 </html>

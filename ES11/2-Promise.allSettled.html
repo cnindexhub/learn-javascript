@@ -8,26 +8,27 @@
 <body>
     <script>
         //声明两个promise对象
-        const p1 = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
+        const p1 = new Promise ((resolve, reject) => {
+            setTimeout(() => {
                 resolve('商品数据 - 1');
-            },1000)
-        });
-
-        const p2 = new Promise((resolve, reject)=>{
-            setTimeout(()=>{
-                resolve('商品数据 - 2');
-                // reject('出错啦!');
-            },1000)
+            }, 1000)
         });
 
         //调用 allsettled 方法
-        // const result = Promise.allSettled([p1, p2]);
-        
-        // const res = Promise.all([p1, p2]);
-
-        console.log(res);
-
+        const p2 = new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 2');
+                // reject('出错了~~')
+            }, 1000)
+        });
+        // 批量异步操作时使用
+        // 如果想要监听批量异步操作是否失败可以使用all
+        // all中遇到某一个promise失败时就返回该失败的promise，并且抛出异常
+        // 如果不需要可以是否失败，直接使用allSettled
+        let all = Promise.all([p1, p2]);
+        console.log(all);
+        const allSettled = Promise.allSettled([p1, p2]);
+        console.log(allSettled)
     </script>
 </body>
 </html>

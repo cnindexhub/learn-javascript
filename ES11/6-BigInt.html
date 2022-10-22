@@ -8,23 +8,23 @@
 <body>
     <script>
         //大整形
-        // let n = 521n;
-        // console.log(n, typeof(n));
-
-        //函数
-        // let n = 123;
-        // console.log(BigInt(n));
-        // console.log(BigInt(1.2));
-
+        let bigint = 123n;
+        console.log(bigint, typeof bigint)
+        //函数，可以通过BigInt将普通整型转为大整型
+        let bigint2 = BigInt(123);
+        console.log(bigint === bigint2)
+        console.log(bigint2);
         //大数值运算
+        // 最大安全整数 Number.MAX_SAFE_INTEGER
         let max = Number.MAX_SAFE_INTEGER;
-        console.log(max);
-        console.log(max + 1);
-        console.log(max + 2);
-
-        console.log(BigInt(max))
-        console.log(BigInt(max) + BigInt(1))
-        console.log(BigInt(max) + BigInt(2))
+        console.log(max)
+        console.log(max + 1)
+        console.log(max + 2)
+        // 超过普通整形最大就是 Number.MAX_SAFE_INTEGER + 1,而bigint类型看更大
+        console.log(BigInt(max));
+        console.log(BigInt(max) + BigInt(1));
+        console.log(BigInt(max) + BigInt(2));
+        // 注意bigint大整型只能跟大整型相加 +
     </script>
 </body>
 </html>
